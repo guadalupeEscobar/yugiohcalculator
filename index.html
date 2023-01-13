@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Yu-Gi-Oh Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <main>
+      <section class="container modal hidden-modal">
+        <button class="btn close-modal">&times;</button>
+        <h2>Initial LP</h2>
+        <form>
+          <input
+            type="number"
+            placeholder="LP"
+            class="input input__initial-lp"
+          />
+          <label class="label label__initial-lp">Initial LP</label>
+          <button class="btn btn__itinial-lp">LET'S DUEL!</button>
+        </form>
+      </section>
+      <section class="general">
+        <div class="container game-info">
+          <div class="card players__card card--2 card--active">
+            <div class="player player--0 player--active">
+              <h2 class="player__name">
+                <span>Player 1</span>
+              </h2>
+              <img
+                src="./img/carbunco-rubí.png"
+                alt="Carbunco rubí"
+                class="avatar avatar--active"
+                id="avatar--0"
+              />
+              <p class="player__text">LP</p>
+              <p class="life-points" id="life--0">5000</p>
+            </div>
+            <button class="btn btn-switch">switch</button>
+            <div class="player player--1">
+              <h2 class="player__name">
+                <span>Player 2</span>
+              </h2>
+              <img
+                src="./img/kuriboh-alado.png"
+                alt="Carbunco rubí"
+                class="avatar"
+                id="avatar--1"
+              />
+              <p class="player__text">LP</p>
+              <p class="life-points" id="life--1">5000</p>
+            </div>
+          </div>
+          <div class="card duels__card card--3">
+            <h2 class="duels__header">duels won</h2>
+            <div class="duels__data">
+              <div class="player__duels">
+                <h2 class="player__name--duels">Player 1</h2>
+                <p class="duels__counter counter--0">0</p>
+              </div>
+              <div class="player__duels">
+                <h2 class="player__name--duels">Player 2</h2>
+                <p class="duels__counter counter--1">0</p>
+              </div>
+            </div>
+          </div>
+          <div class="card history__card card--4">
+            <h2 class="history__header">history</h2>
+            <table class="history__table container">
+              <tr>
+                <th scope="col" class="history__text">winner</th>
+                <th class="history__text">lp</th>
+                <th lass="history__text">time</th>
+              </tr>
+            </table>
+          </div>
+          <div class="card winner">
+            <h2 class="winner__text">Player 1 Wins!</h2>
+            <img
+              src="./img/carbunco-rubí.png"
+              alt="Carbunco rubí"
+              class="winner__avatar"
+            />
+            <p class="winner__time">Game time: 12:00</p>
+            <p class="winner__lp">Winner's final LP: 2400</p>
+          </div>
+        </div>
+        <div class="container buttons">
+          <button class="btn btn-new-game" data-btn="1">New Duel</button>
+          <button class="btn btn-players-card" data-btn="2">Game</button>
+          <button class="btn btn-duels-card" data-btn="3">Duel counter</button>
+          <button class="btn btn-history-card" data-btn="4">history</button>
+        </div>
+      </section>
+      <section class="container calculator-points">
+        <form class="form__points">
+          <input
+            type="number"
+            placeholder="Points"
+            class="input input__points"
+          />
+          <label class="label label__points">Points</label>
+          <button class="btn btn__points btn-recovery">recovery</button>
+          <button class="btn btn__points btn-damage">damage</button>
+        </form>
+      </section>
+      <section class="container calculator-turn">
+        <form class="form__turn">
+          <input
+            type="number"
+            placeholder="Max"
+            class="input input__turn points--max"
+          />
+          <label class="label label__turn label-points--max">Max</label>
+          <input
+            type="number"
+            placeholder="Min"
+            class="input input__turn points--min"
+          />
+          <label class="label label__turn label-points--min">Min</label>
+          <button class="btn btn__subtract">subtract</button>
+        </form>
+        <p class="text__turn">0000</p>
+      </section>
+      <section class="container time">
+        <h2 class="time__text">time</h2>
+        <p class="time__number">00:00</p>
+        <div class="btn__time">
+          <button class="btn time__start" id="start">▶︎</button>
+          <button class="btn time__stop" id="stop">◼︎</button>
+          <button class="btn time__reset" id="reset">⟳</button>
+        </div>
+      </section>
+      <section class="container slider">
+        <div class="slides slide-1">
+          <div class="slide random-number">
+            <h2 class="slide__text">random</h2>
+            <p class="element element-number">1</p>
+            <button class="btn btn__slide btn__slide--random">generate</button>
+          </div>
+        </div>
+        <div class="slides slide-2 visibility">
+          <div class="slide flip-coin">
+            <h2 class="slide__text">Flip</h2>
+            <div class="ojama-coin">
+              <img
+                src="./img/ojama-blue.png"
+                alt="ojama-blue"
+                class="element element__coin--blue"
+              />
+              <img
+                src="./img/ojama-red.png"
+                alt="ojama-red"
+                class="element element__coin--red"
+              />
+            </div>
+            <button class="btn btn__slide btn__slide--flip">flip</button>
+          </div>
+        </div>
+        <div class="slides slide-3 visibility">
+          <div class="slide slide-counter">
+            <h2 class="slide__text">counter</h2>
+            <p class="element element-counter">0</p>
+            <div class="btn__counter">
+              <button class="btn btn__slide btn__slide--counter">+</button>
+              <button class="btn btn__slide btn__slide--subtract">-</button>
+              <button class="btn btn__slide btn__slide--reset">⟳</button>
+            </div>
+          </div>
+        </div>
+        <button class="btn slider__btn slider__btn--left">&larr;</button>
+        <button class="btn slider__btn slider__btn--right">&rarr;</button>
+      </section>
+      <section class="container copyright">
+        <p>Yu-Gi-Oh Calculator</p>
+        <p>Copyright &copy; by Guadalupe Escobar</p>
+      </section>
+    </main>
+  </body>
+</html>
