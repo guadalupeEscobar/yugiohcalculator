@@ -328,7 +328,7 @@ const gameOver = function () {
     loser === 0 ? (winner = 1) : (winner = 0);
     winnerPlayer.textContent = `Player ${winner + 1} Wins!`;
     winnerAvatar.src = `${
-      winner === 0 ? "./img/carbunco-rubí.png" : "./img/kuriboh-alado.png"
+      winner === 0 ? "./img/carbunco-rubi.png" : "./img/kuriboh-alado.png"
     }`;
     duelsWon();
     historyTable();
